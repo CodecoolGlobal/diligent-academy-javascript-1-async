@@ -1,4 +1,4 @@
-import {readFile} from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 
 /*
   - Create a function, that opens the quotes.txt and read its content and log it to the console.
@@ -9,3 +9,9 @@ import {readFile} from "node:fs/promises";
     syntax: readFile(path: string, encoding: string): Promise<string>
     example; readFile('./some-file.txt', 'utf8')
 */
+
+const task = () => {
+
+}
+
+task()
