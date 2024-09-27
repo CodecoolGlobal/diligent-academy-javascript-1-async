@@ -1,4 +1,5 @@
 const random = (max) => Math.floor(Math.random() * (max + 1))
+const pick = (list) => list[random(list.length - 1)]
 
 export const sleep = (waitingTimeMs) => {
   return new Promise((fulfill, reject) => {
@@ -10,6 +11,15 @@ export const sleep = (waitingTimeMs) => {
 
 export const sleepTwoSecs = () => {
   return sleep(2000)
+}
+
+export const surpriseMe = () => {
+  return new Promise((fulfill, reject) => {
+    setTimeout(() => {
+      const max = 10;
+      fulfill(pick(["Ice Cream", "Cake", "Shake", "Muffin", "Coffee"]))
+    }, 0)
+  })
 }
 
 export const getRandomNumber = () => {
@@ -31,8 +41,7 @@ export const openSchrodringerBox = () => {
   return new Promise((fulfill, reject) => {
     setTimeout(() => {
       const isAlive = Math.random() > 0.5
-      const catNames = ['Mirci', 'Snowball', 'Luna', 'Fluffy']
-      const selectedCat = catNames[random(catNames.length - 1)]
+      const selectedCat = pick(['Mirci', 'Snowball', 'Luna', 'Fluffy'])
       if (isAlive) {
         fulfill(selectedCat)
       } else {
